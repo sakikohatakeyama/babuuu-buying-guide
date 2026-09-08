@@ -90,9 +90,14 @@
     font-family:'Baloo 2', sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.03em;
     background:#fff; color:var(--ink); padding:7px 14px; border-radius:999px;
   }
-  .fv-tile.t1 img{object-position:top center;}
+  .fv-tile.t1 img{object-position:center 30%;}
   .fv-tile.t2 img{object-position:top center;}
-  .fv-tile.t3 img{object-position:bottom center;}
+  .fv-tile.t3 img{object-position:center;}
+  .fv-tile .best{
+    position:absolute; left:12px; top:12px;
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:11.5px; letter-spacing:.03em;
+    background:var(--navy); color:#fff; padding:6px 12px; border-radius:999px;
+  }
 
   /* ===== statement ===== */
   .statement{padding-top:88px; padding-bottom:80px;}
@@ -111,7 +116,11 @@
   .g-num{
     font-family:'Baloo 2', sans-serif; font-weight:800; font-size:15px; color:#fff;
     background:var(--pop); display:inline-flex; align-items:center; justify-content:center;
-    width:auto; padding:7px 16px; border-radius:999px; margin-bottom:22px;
+    width:auto; padding:7px 16px; border-radius:999px; margin-bottom:14px;
+  }
+  .best-note{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:12px; letter-spacing:.02em;
+    color:var(--pop-deep); margin-bottom:16px;
   }
   .guide-scene{font-weight:900; font-size:27px; line-height:1.5; margin-bottom:20px;}
   .guide-note{font-size:15px; color:var(--ink-soft); max-width:24em; margin-bottom:8px; font-weight:500;}
@@ -173,15 +182,18 @@
 
     <div class="fv-gallery">
       <a href="#g01" class="fv-tile t1 reveal">
-        <img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/s2a.jpg" alt="ベビーカー">
+        <img src="https://tshop.r10s.jp/babuuu/cabinet/combi/4972990199568_s6.jpg" alt="ベビーカー">
+        <span class="best en">No.1 FAVORITED</span>
         <span class="tag en">01 STROLLER</span>
       </a>
       <a href="#g02" class="fv-tile t2 reveal">
         <img src="https://image.rakuten.co.jp/babuuu/cabinet/dadway/191653012882_lp09.jpg" alt="抱っこ紐">
+        <span class="best en">No.1 FAVORITED</span>
         <span class="tag en">02 CARRIER</span>
       </a>
       <a href="#g03" class="fv-tile t3 reveal">
-        <img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990186056_lp1a.jpg" alt="チャイルドシート">
+        <img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990193641_lp1.jpg" alt="チャイルドシート">
+        <span class="best en">No.1 FAVORITED</span>
         <span class="tag en">03 CAR SEAT</span>
       </a>
     </div>
@@ -204,10 +216,11 @@
   <section class="guide" id="g01">
     <div class="wrap guide-grid">
       <div class="guide-photo reveal">
-        <img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/s2a.jpg" alt="ベビーカーのカラーバリエーション" style="object-fit:contain; background:#fff;">
+        <img src="https://tshop.r10s.jp/babuuu/cabinet/combi/4972990199568_s6.jpg" alt="人気No.1のベビーカーを使う親子" style="object-position:center 30%;">
       </div>
       <div class="guide-body">
         <div class="g-num en reveal">01 / STROLLER</div>
+        <div class="best-note reveal">お気に入り登録数 No.1（2026/9/1-9/7実績）</div>
         <h2 class="guide-scene reveal">新生児から？<br>それとも、今から？</h2>
         <p class="guide-note reveal">対象月齢と、日々の移動手段。このふたつを起点に考えると、選択肢はぐっと絞られます。</p>
         <div class="check reveal">
@@ -232,6 +245,7 @@
       </div>
       <div class="guide-body">
         <div class="g-num en reveal">02 / CARRIER</div>
+        <div class="best-note reveal">お気に入り登録数 No.1（2026/9/1-9/7実績）</div>
         <h2 class="guide-scene reveal">対面？　おんぶ？<br>前向き？</h2>
         <p class="guide-note reveal">抱き方の種類と、毎日の着脱のしやすさ。使う人の体格や生活スタイルにも関わってきます。</p>
         <div class="check reveal">
@@ -251,11 +265,12 @@
   <!-- 03 チャイルドシート -->
   <section class="guide" id="g03">
     <div class="wrap guide-grid">
-      <div class="guide-photo op-bottom reveal">
-        <img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990186056_lp1a.jpg" alt="チャイルドシートに乗る子ども">
+      <div class="guide-photo reveal">
+        <img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990193641_lp1.jpg" alt="人気No.1のチャイルドシートに乗せる親子">
       </div>
       <div class="guide-body">
         <div class="g-num en reveal">03 / CAR SEAT</div>
+        <div class="best-note reveal">お気に入り登録数 No.1（2026/9/1-9/7実績）</div>
         <h2 class="guide-scene reveal">つけっぱなし？<br>途中から？</h2>
         <p class="guide-note reveal">使う期間と、乗せ降ろしの頻度。安全性はもちろん、日々の手間にも直結します。</p>
         <div class="check reveal">
