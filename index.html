@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>迷っているあの商品、選び方をもう一度確認！｜babuuu.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pop:#FF6B3D;
+    --pop-deep:#E4501F;
+    --pop-soft:#FFE4D3;
+    --cream:#FFF8EE;
+    --paper:#FFFFFF;
+    --ink:#2A2018;
+    --ink-soft:#7A6A5C;
+    --navy:#22201C;
+    --line:#EFE3D3;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-weight:500;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1, h2, p{word-break:keep-all; overflow-wrap:break-word;}
+  img{display:block; max-width:100%;}
+  a{color:inherit;}
+  .en{font-family:'Baloo 2', sans-serif;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  @media (min-width:880px){ .wrap{padding:0 64px;} }
+
+  .topbar{display:flex; align-items:center; justify-content:space-between; padding:20px 24px;}
+  @media (min-width:880px){ .topbar{padding:26px 64px;} }
+  .topbar .mark{font-family:'Baloo 2', sans-serif; font-weight:800; font-size:20px; letter-spacing:.01em; color:var(--pop-deep);}
+  .topbar .shoplink{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:12px; letter-spacing:.06em;
+    text-decoration:none; color:var(--ink); background:var(--pop-soft); padding:9px 18px; border-radius:999px;
+  }
+
+  .reveal{opacity:0; transform:translateY(20px); transition:opacity .8s ease, transform .8s ease;}
+  .reveal.is-visible{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion: reduce){ *{animation-duration:.01ms !important; transition-duration:.01ms !important;} }
+
+  .pill{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:13px; letter-spacing:.03em;
+    padding:8px 18px; border-radius:999px; background:var(--navy); color:#fff;
+  }
+
+  /* ===== FV ===== */
+  .fv{background:var(--pop); color:#fff; padding:26px 0 64px; position:relative; overflow:hidden;}
+  .fv-top{display:flex; align-items:center; justify-content:space-between; padding:0 24px 8px;}
+  @media (min-width:880px){ .fv-top{padding:0 64px 8px;} }
+  .fv-top .mark{font-family:'Baloo 2', sans-serif; font-weight:800; font-size:20px; color:#fff;}
+  .fv-top .shoplink{
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:12px; letter-spacing:.06em;
+    text-decoration:none; color:var(--pop-deep); background:#fff; padding:9px 18px; border-radius:999px;
+  }
+  .fv-with{
+    margin:38px 24px 0; display:inline-flex; align-items:center; gap:10px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:14px; letter-spacing:.04em;
+    background:rgba(255,255,255,.16); padding:8px 18px 8px 8px; border-radius:999px;
+  }
+  @media (min-width:880px){ .fv-with{margin-left:64px;} }
+  .fv-with .dot{width:26px; height:26px; border-radius:50%; background:#fff; color:var(--pop-deep); display:flex; align-items:center; justify-content:center; font-size:14px;}
+  .fv-title{
+    margin:26px 24px 0; font-weight:900;
+    font-size:clamp(32px, 8vw, 74px); line-height:1.32;
+  }
+  @media (min-width:880px){ .fv-title{margin-left:64px; margin-right:64px;} }
+  .fv-sub{
+    margin:26px 24px 0; max-width:30em; font-size:clamp(14.5px, 1.6vw, 16.5px);
+    color:#FFE8DB; font-weight:500;
+  }
+  @media (min-width:880px){ .fv-sub{margin-left:64px;} }
+
+  .fv-gallery{
+    margin-top:48px; display:grid; grid-template-columns:1fr; gap:14px; padding:0 24px;
+  }
+  @media (min-width:880px){ .fv-gallery{padding:0 64px; grid-template-columns:repeat(3,1fr); gap:20px;} }
+  .fv-tile{position:relative; border-radius:22px; overflow:hidden; aspect-ratio:3/2; background:#fff;}
+  .fv-tile img{width:100%; height:100%; object-fit:cover;}
+  .fv-tile .tag{
+    position:absolute; left:12px; bottom:12px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:12.5px; letter-spacing:.03em;
+    background:#fff; color:var(--ink); padding:7px 14px; border-radius:999px;
+  }
+  .fv-tile.t1 img{object-position:top center;}
+  .fv-tile.t2 img{object-position:top center;}
+  .fv-tile.t3 img{object-position:bottom center;}
+
+  /* ===== statement ===== */
+  .statement{padding-top:88px; padding-bottom:80px;}
+  .statement p{font-weight:700; font-size:clamp(20px, 3vw, 30px); line-height:1.95; max-width:19em; color:var(--ink);}
+  .statement p + p{margin-top:34px;}
+  .statement mark{background:none; color:var(--pop-deep); font-weight:900;}
+
+  /* ===== guide sections ===== */
+  .guide{padding:80px 0;}
+  .guide-grid{display:grid; grid-template-columns:1fr; gap:36px;}
+  @media (min-width:880px){
+    .guide-grid{grid-template-columns:1fr 1fr; gap:64px; align-items:center;}
+    .guide.reverse .guide-photo{order:2;}
+    .guide.reverse .guide-body{order:1;}
+  }
+  .guide-photo{border-radius:28px; overflow:hidden; aspect-ratio:3/2; background:#ddd;}
+  .guide-photo img{width:100%; height:100%; object-fit:cover;}
+  .guide-photo.op-top img{object-position:top center;}
+  .guide-photo.op-bottom img{object-position:bottom center;}
+
+  .g-num{
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:15px; color:#fff;
+    background:var(--pop); display:inline-flex; align-items:center; justify-content:center;
+    width:auto; padding:7px 16px; border-radius:999px; margin-bottom:22px;
+  }
+  .guide-scene{font-weight:900; font-size:clamp(25px, 3.4vw, 38px); line-height:1.5; margin-bottom:20px;}
+  .guide-note{font-size:15px; color:var(--ink-soft); max-width:24em; margin-bottom:8px; font-weight:500;}
+  .guide-link{
+    display:inline-flex; align-items:center; gap:10px; margin-top:26px;
+    font-family:'Baloo 2', sans-serif; font-weight:700; font-size:13.5px; letter-spacing:.04em;
+    text-decoration:none; color:#fff; background:var(--navy); padding:13px 26px; border-radius:999px;
+  }
+  .guide-link svg{width:13px; height:13px;}
+  .guide-link path{fill:none; stroke:currentColor; stroke-width:2;}
+
+  .check{margin-top:34px;}
+  .check-item{display:grid; grid-template-columns:40px 1fr; gap:16px; padding:16px 0;}
+  .check-num{
+    width:34px; height:34px; border-radius:50%; background:var(--pop-soft); color:var(--pop-deep);
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:14px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .check-h{font-weight:700; font-size:15px; margin-bottom:6px;}
+  .check-b{font-size:13.8px; color:var(--ink-soft); font-weight:500;}
+
+  /* ===== closing ===== */
+  .closing{background:var(--pop); color:#fff; padding:100px 0 88px;}
+  .closing-title{font-weight:900; font-size:clamp(26px, 4.6vw, 46px); line-height:1.65; max-width:15em;}
+  .closing-sub{margin-top:22px; font-size:15px; color:#FFE8DB; max-width:28em; font-weight:500;}
+  .closing-actions{margin-top:42px; display:flex; flex-wrap:wrap; gap:14px;}
+  .closing-cta{
+    display:inline-flex; align-items:center; gap:12px;
+    padding:16px 30px; text-decoration:none; font-family:'Baloo 2', sans-serif; font-size:13.5px; letter-spacing:.04em; font-weight:700;
+    border-radius:999px; background:#fff; color:var(--pop-deep);
+  }
+  .closing-cta svg{width:13px; height:13px;}
+  .closing-cta path{fill:none; stroke:currentColor; stroke-width:2;}
+
+  footer{padding:40px 0 52px; background:var(--navy); color:#fff;}
+  footer .mark{font-family:'Baloo 2', sans-serif; font-weight:800; font-size:16px;}
+  footer .tagline{margin-top:8px; font-size:12px; color:#B8B2AA;}
+</style>
+</head>
+<body>
+
+  <section class="fv">
+    <div class="fv-top">
+      <div class="mark">babuuu.</div>
+      <a class="shoplink" href="https://search.rakuten.co.jp/search/mall/?sid=422856&l-id=shoptop_shopmenu_search_bar" target="_blank" rel="noopener">SHOP TOP</a>
+    </div>
+
+    <div class="fv-with reveal"><span class="dot en">?</span>with babuuu. GUIDE</div>
+    <h1 class="fv-title reveal">
+      迷っているあの商品、<br>
+      選び方を<br>
+      もう一度確認！
+    </h1>
+    <p class="fv-sub reveal">
+      気になっているけれど、どれを選べばいいか分からない。<br class="brpc">
+      ベビーカーも、抱っこ紐も、チャイルドシートも——<br class="brpc">
+      暮らし方に合わせて、選び方を一緒に確認してみましょう。
+    </p>
+
+    <div class="fv-gallery">
+      <a href="#g01" class="fv-tile t1 reveal">
+        <img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/s2a.jpg" alt="ベビーカー">
+        <span class="tag en">01 STROLLER</span>
+      </a>
+      <a href="#g02" class="fv-tile t2 reveal">
+        <img src="https://image.rakuten.co.jp/babuuu/cabinet/dadway/191653012882_lp09.jpg" alt="抱っこ紐">
+        <span class="tag en">02 CARRIER</span>
+      </a>
+      <a href="#g03" class="fv-tile t3 reveal">
+        <img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990186056_lp1a.jpg" alt="チャイルドシート">
+        <span class="tag en">03 CAR SEAT</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="statement wrap">
+    <p class="reveal">
+      ベビーカーも、抱っこ紐も、<br>
+      チャイルドシートも、<br>
+      <mark>暮らし方や使う場面</mark>によって、<br>
+      ぴったりなものは変わります。
+    </p>
+    <p class="reveal">
+      毎日を一緒に過ごすものだから、<br>
+      選び方を、もう一度確認してみませんか？
+    </p>
+  </section>
+
+  <!-- 01 ベビーカー -->
+  <section class="guide" id="g01">
+    <div class="wrap guide-grid">
+      <div class="guide-photo reveal">
+        <img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/s2a.jpg" alt="ベビーカーのカラーバリエーション" style="object-fit:contain; background:#fff;">
+      </div>
+      <div class="guide-body">
+        <div class="g-num en reveal">01 / STROLLER</div>
+        <h2 class="guide-scene reveal">新生児から？<br>それとも、今から？</h2>
+        <p class="guide-note reveal">対象月齢と、日々の移動手段。このふたつを起点に考えると、選択肢はぐっと絞られます。</p>
+        <div class="check reveal">
+          <div class="check-item"><div class="check-num en">1</div><div><div class="check-h">対象月齢をチェック</div><div class="check-b">生後0ヶ月から使えるA型か、7ヶ月頃からのB型か。</div></div></div>
+          <div class="check-item"><div class="check-num en">2</div><div><div class="check-h">使う場面を思い浮かべる</div><div class="check-b">電車・バス移動なら軽さとコンパクトさ、車移動中心なら安定感も選択肢に。</div></div></div>
+          <div class="check-item"><div class="check-num en">3</div><div><div class="check-h">まわりの環境を確認</div><div class="check-b">段差や階段、エレベーターの有無で優先度が変わります。</div></div></div>
+          <div class="check-item"><div class="check-num en">4</div><div><div class="check-h">きょうだいの有無</div><div class="check-b">上の子と歩くのか、二人乗りが必要か。</div></div></div>
+        </div>
+        <a class="guide-link reveal" href="https://search.rakuten.co.jp/search/mall/%E3%83%99%E3%83%93%E3%83%BC%E3%82%AB%E3%83%BC/?sid=422856" target="_blank" rel="noopener">
+          ベビーカーを見る
+          <svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 抱っこ紐 -->
+  <section class="guide reverse" id="g02">
+    <div class="wrap guide-grid">
+      <div class="guide-photo op-top reveal">
+        <img src="https://image.rakuten.co.jp/babuuu/cabinet/dadway/191653012882_lp09.jpg" alt="抱っこ紐で抱っこする様子">
+      </div>
+      <div class="guide-body">
+        <div class="g-num en reveal">02 / CARRIER</div>
+        <h2 class="guide-scene reveal">対面？　おんぶ？<br>前向き？</h2>
+        <p class="guide-note reveal">抱き方の種類と、毎日の着脱のしやすさ。使う人の体格や生活スタイルにも関わってきます。</p>
+        <div class="check reveal">
+          <div class="check-item"><div class="check-num en">1</div><div><div class="check-h">対応月齢を確認</div><div class="check-b">新生児から使えるか、首すわり後からか。</div></div></div>
+          <div class="check-item"><div class="check-num en">2</div><div><div class="check-h">必要な抱き方</div><div class="check-b">対面抱き・おんぶ・前向き抱っこ。よく使う形が対応しているか。</div></div></div>
+          <div class="check-item"><div class="check-num en">3</div><div><div class="check-h">着脱のしやすさ</div><div class="check-b">ワンオペが多いなら、ひとりで着脱しやすい構造を。</div></div></div>
+          <div class="check-item"><div class="check-num en">4</div><div><div class="check-h">素材と季節対応</div><div class="check-b">通気性のよいメッシュか、防寒対応か。</div></div></div>
+        </div>
+        <a class="guide-link reveal" href="https://search.rakuten.co.jp/search/mall/%E6%8A%B1%E3%81%A3%E3%81%93%E7%B4%90/?sid=422856" target="_blank" rel="noopener">
+          抱っこ紐を見る
+          <svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 チャイルドシート -->
+  <section class="guide" id="g03">
+    <div class="wrap guide-grid">
+      <div class="guide-photo op-bottom reveal">
+        <img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990186056_lp1a.jpg" alt="チャイルドシートに乗る子ども">
+      </div>
+      <div class="guide-body">
+        <div class="g-num en reveal">03 / CAR SEAT</div>
+        <h2 class="guide-scene reveal">つけっぱなし？<br>途中から？</h2>
+        <p class="guide-note reveal">使う期間と、乗せ降ろしの頻度。安全性はもちろん、日々の手間にも直結します。</p>
+        <div class="check reveal">
+          <div class="check-item"><div class="check-num en">1</div><div><div class="check-h">使用期間を考える</div><div class="check-b">新生児からのロングユースか、腰がすわってからか。</div></div></div>
+          <div class="check-item"><div class="check-num en">2</div><div><div class="check-h">固定方式を選ぶ</div><div class="check-b">工具いらずのISOFIXか、シートベルト固定か。</div></div></div>
+          <div class="check-item"><div class="check-num en">3</div><div><div class="check-h">乗せ降ろしのしやすさ</div><div class="check-b">回転式なら、腰の負担も少なく。</div></div></div>
+          <div class="check-item"><div class="check-num en">4</div><div><div class="check-h">車との相性</div><div class="check-b">座席サイズやドアの開き方を事前に確認。</div></div></div>
+        </div>
+        <a class="guide-link reveal" href="https://search.rakuten.co.jp/search/mall/%E3%83%81%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/?sid=422856" target="_blank" rel="noopener">
+          チャイルドシートを見る
+          <svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing">
+    <div class="wrap">
+      <div class="pill reveal en">HOW TO CHOOSE</div>
+      <p class="closing-title reveal" style="margin-top:26px;">選び方に迷ったら、<br>いつでもbabuuu.に。</p>
+      <p class="closing-sub reveal">あなたの暮らしに、ぴったりの一台を。<br>気になっていたあの商品を、今日はもう一度見てみませんか。</p>
+      <div class="closing-actions reveal">
+        <a class="closing-cta" href="https://search.rakuten.co.jp/search/mall/?sid=422856&l-id=shoptop_shopmenu_search_bar" target="_blank" rel="noopener">
+          babuuu.のアイテムを見る
+          <svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="mark">babuuu.</div>
+      <div class="tagline">スタイリッシュな子育てライフをトータルサポート</div>
+    </div>
+  </footer>
+
+<script>
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); }
+    });
+  }, {threshold:.1, rootMargin:'0px 0px -6% 0px'});
+  revealEls.forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
