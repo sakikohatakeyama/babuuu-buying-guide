@@ -133,6 +133,26 @@
   .check-h{font-weight:700; font-size:15px; margin-bottom:6px;}
   .check-b{font-size:13.8px; color:var(--ink-soft); font-weight:500;}
 
+  /* ===== product list ===== */
+  .products{padding:88px 0 32px;}
+  .products-title{font-weight:900; font-size:27px; margin-bottom:14px;}
+  .products-lead{font-size:14.5px; color:var(--ink-soft); margin-bottom:8px;}
+  .product-group{margin-top:52px;}
+  .pg-title{
+    display:flex; align-items:center; gap:10px;
+    font-weight:800; font-size:16px; margin-bottom:20px;
+  }
+  .pg-title .num{
+    font-family:'Baloo 2', sans-serif; font-weight:800; font-size:11.5px; color:#fff;
+    background:var(--navy); padding:5px 12px; border-radius:999px;
+  }
+  .product-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 16px;}
+  .product-card{display:block; text-decoration:none; color:var(--ink);}
+  .pc-photo{aspect-ratio:1/1; border-radius:16px; overflow:hidden; background:#e9e2d3; margin-bottom:10px;}
+  .pc-photo img{width:100%; height:100%; object-fit:cover;}
+  .pc-name{font-size:12.5px; font-weight:700; line-height:1.5; margin-bottom:4px;}
+  .pc-price{font-family:'Baloo 2', sans-serif; font-size:13px; color:var(--pop-deep); font-weight:700;}
+
   /* ===== closing ===== */
   .closing{background:var(--pop); color:#fff; padding:100px 0 88px;}
   .closing-title{font-weight:900; font-size:28px; line-height:1.65; max-width:15em;}
@@ -267,6 +287,91 @@
         <a class="guide-link reveal" href="https://search.rakuten.co.jp/search/mall/%E3%83%81%E3%83%A3%E3%82%A4%E3%83%AB%E3%83%89%E3%82%B7%E3%83%BC%E3%83%88/?sid=422856" target="_blank" rel="noopener">
           チャイルドシートを見る
           <svg viewBox="0 0 20 20"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 人気商品一覧 -->
+  <section class="products wrap">
+    <div class="eyebrow reveal"><span class="dot"></span>PICK UP ITEMS</div>
+    <h2 class="products-title reveal">人気商品一覧</h2>
+    <p class="products-lead reveal">気になるカテゴリから、実際の商品をチェックしてみて。</p>
+
+    <div class="product-group">
+      <div class="pg-title reveal"><span class="num en">01</span>ベビーカー</div>
+      <div class="product-grid">
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00353/" target="_blank" rel="noopener">
+          <div class="pc-photo"><img src="https://tshop.r10s.jp/babuuu/cabinet/combi/4972990199568_s6.jpg" alt="コンビ オートN ベビーカー b型" style="object-position:center 30%;"></div>
+          <div class="pc-name">コンビ オートN ベビーカー b型</div>
+          <div class="pc-price en">¥26,500〜</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00021/" target="_blank" rel="noopener">
+          <div class="pc-photo" style="aspect-ratio:1.15/1;"><img src="https://image.rakuten.co.jp/babuuu/cabinet/aprica/4969220011172_lp1a.jpg" alt="アップリカ ルーチェ フリー AC" style="object-position:center 79%;"></div>
+          <div class="pc-name">アップリカ ルーチェ フリー AC</div>
+          <div class="pc-price en">¥76,890</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00027/" target="_blank" rel="noopener">
+          <div class="pc-photo"><img src="https://tshop.r10s.jp/babuuu/cabinet/combi/new/4972990193689_s2.jpg" alt="コンビ アクビィプラス"></div>
+          <div class="pc-name">コンビ アクビィプラス</div>
+          <div class="pc-price en">¥19,980</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00002/" target="_blank" rel="noopener">
+          <div class="pc-photo"><img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/new/4969220009117_s2.jpg" alt="アップリカ カルーンエアーメッシュ"></div>
+          <div class="pc-name">アップリカ カルーンエアーメッシュ</div>
+          <div class="pc-price en">¥33,100</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="product-group">
+      <div class="pg-title reveal"><span class="num en">02</span>抱っこ紐</div>
+      <div class="product-grid">
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/ergobaby-005/" target="_blank" rel="noopener">
+          <div class="pc-photo" style="aspect-ratio:1.4/1;"><img src="https://image.rakuten.co.jp/babuuu/cabinet/dadway/191653012882_lp09.jpg" alt="エルゴベビー オムニクラシック メッシュ" style="object-position:top;"></div>
+          <div class="pc-name">エルゴベビー オムニクラシック メッシュ</div>
+          <div class="pc-price en">¥20,700〜</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00007/" target="_blank" rel="noopener">
+          <div class="pc-photo" style="aspect-ratio:3/4;"><img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/4969220010663_s3.jpg" alt="アップリカ ラクリス AB" style="object-position:right;"></div>
+          <div class="pc-name">アップリカ ラクリス AB</div>
+          <div class="pc-price en">¥32,780</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00316/" target="_blank" rel="noopener">
+          <div class="pc-photo"><img src="https://tshop.r10s.jp/babuuu/cabinet/dadway/new/0191653010765_s2.jpg" alt="エルゴベビー オムニデラックスメッシュ"></div>
+          <div class="pc-name">エルゴベビー オムニデラックスメッシュ</div>
+          <div class="pc-price en">¥36,850</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00403/" target="_blank" rel="noopener">
+          <div class="pc-photo" style="aspect-ratio:1.5/1;"><img src="https://tshop.r10s.jp/babuuu/cabinet/aprica/4969220010601_s2.jpg" alt="アップリカ クルム ファースト" style="object-position:top;"></div>
+          <div class="pc-name">アップリカ クルム ファースト</div>
+          <div class="pc-price en">¥46,200</div>
+        </a>
+      </div>
+    </div>
+
+    <div class="product-group">
+      <div class="pg-title reveal"><span class="num en">03</span>チャイルドシート</div>
+      <div class="product-grid">
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00210/" target="_blank" rel="noopener">
+          <div class="pc-photo"><img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990193641_lp1.jpg" alt="コンビ クルムーヴ ロング R129"></div>
+          <div class="pc-name">コンビ クルムーヴ ロング R129</div>
+          <div class="pc-price en">¥54,900</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00029/" target="_blank" rel="noopener">
+          <div class="pc-photo"><img src="https://image.rakuten.co.jp/babuuu/cabinet/combi/new/4972990186056_lp1a.jpg" alt="コンビ ジョイトリップ アドバンス プラス" style="object-position:bottom;"></div>
+          <div class="pc-name">コンビ ジョイトリップ アドバンス プラス</div>
+          <div class="pc-price en">¥31,900</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00262/" target="_blank" rel="noopener">
+          <div class="pc-photo" style="aspect-ratio:1.6/1;"><img src="https://tshop.r10s.jp/babuuu/cabinet/graco/4969220009520_s5.jpg" alt="グレコ ジュニアプラス ネクスト" style="object-position:top;"></div>
+          <div class="pc-name">グレコ ジュニアプラス ネクスト</div>
+          <div class="pc-price en">¥9,670</div>
+        </a>
+        <a class="product-card reveal" href="https://item.rakuten.co.jp/babuuu/bgoods-00197/" target="_blank" rel="noopener">
+          <div class="pc-photo" style="aspect-ratio:4/3;"><img src="https://tshop.r10s.jp/babuuu/cabinet/katoji/4930969383189_s2.jpg" alt="Joie エレベート R129" style="object-position:top;"></div>
+          <div class="pc-name">Joie エレベート R129</div>
+          <div class="pc-price en">¥17,870</div>
         </a>
       </div>
     </div>
